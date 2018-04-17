@@ -16,12 +16,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
-        let myAlert = UIAlertController(title: "알림", message: "설정된 시간이 되었습니다!", preferredStyle: .alert)
+        //밑에서 위로
+        let myAlert = UIAlertController(title: "알림", message: "설정된 시간이 되었습니다!", preferredStyle: .actionSheet)
+        //팝업창
+        //let myAlert = UIAlertController(title: "알림", message: "설정된 시간이 되었습니다!", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: {(myAction: UIAlertAction) -> Void in
-            self.view.backgroundColor = UIColor.red
-            
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: {(myAction: UIAlertAction) -> Void in self.view.backgroundColor = UIColor.red
         })
+        //후행 클로저(Trailing Closure)
+        //let okAction = UIAlertAction(title: "확인", style: .default) {(myAction: UIAlertAction) -> Void in self.view.backgroundColor = UIColor.red}
+        
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(myAction: UIAlertAction) -> Void in
             self.view.backgroundColor = UIColor.white
             
